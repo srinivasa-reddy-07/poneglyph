@@ -1,0 +1,19 @@
+import Image from "next/image";
+import Link from "next/link";
+import { DottedSeparator } from "./dotted-separator";
+import { Navigation } from "./navigation";
+import WorkspaceSwitcher from "./workspace-switcher";
+
+export const Sidebar = () => {
+  return (
+    <aside className="h-full w-full bg-neutral-100 p-4">
+      <Link href={"/"}>
+        <Image src={"/ipsum.svg"} alt="logo" height={48} width={164} />
+      </Link>
+      <DottedSeparator className="my-4" />
+      <WorkspaceSwitcher />
+      <DottedSeparator className="my-4" />
+      <Navigation />
+    </aside>
+  );
+};
