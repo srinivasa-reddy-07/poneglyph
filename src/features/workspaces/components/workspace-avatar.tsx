@@ -14,7 +14,7 @@ export const WorkspaceAvatar = ({
   name,
   className,
 }: WorkspaceAvatarProps) => {
-  if (image) {
+  if (image && image !== "undefined") {
     return (
       <div className={cn(
         "relative size-10 rounded-md overflow-hidden",
