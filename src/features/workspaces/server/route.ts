@@ -42,8 +42,8 @@ const app = new Hono()
   })
   .post(
     "/",
-    zValidator("form", createWorkspaceSchema),
     sessionMiddleware,
+    zValidator("form", createWorkspaceSchema),
     async (c) => {
       const databases = c.get("databases");
       const user = c.get("user");
@@ -145,7 +145,7 @@ const app = new Hono()
         workspaceId,
         {
           ...(name ? { name } : {}),
-          ...(uploadedImageUrl ? { imageUrl: uploadedImageUrl } : {}),
+          ...(uploadedImageUrl && uploadedImageUrl !== "undefined" ? { imageUrl: uploadedImageUrl } : {}),
         }
       );
 
