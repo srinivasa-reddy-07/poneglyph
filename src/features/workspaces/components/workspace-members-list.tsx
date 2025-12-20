@@ -1,6 +1,5 @@
 "use client";
 
-import { da } from "date-fns/locale";
 import { ArrowLeft, MoreVerticalIcon } from "lucide-react";
 import Link from "next/link";
 import { Fragment } from "react";

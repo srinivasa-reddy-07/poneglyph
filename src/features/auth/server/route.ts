@@ -1,6 +1,5 @@
 import { Hono } from "hono";
 import { zValidator } from "@hono/zod-validator";
-import { z } from "zod";
 import { ID } from "node-appwrite";
 import { deleteCookie, setCookie } from "hono/cookie";
 
@@ -8,8 +7,6 @@ import { loginSchema, registerSchema } from "../schemas";
 import { createAdminClient } from "@/lib/appwrite";
 import { AUTH_COOKIE } from "../constants";
 import { sessionMiddleware } from "@/lib/session-middleware";
-
-// TODO: Add a session middleware
 
 const app = new Hono()
   .get("/current", sessionMiddleware, (c) => {

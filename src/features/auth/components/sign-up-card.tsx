@@ -28,6 +28,7 @@ import {
 
 import { registerSchema } from "../schemas";
 import { useRegister } from "../api/use-register";
+import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
 
 const SignUpCard = () => {
   const { mutate, isPending } = useRegister();
@@ -126,6 +127,7 @@ const SignUpCard = () => {
             size={"lg"}
             className="w-full"
             disabled={isPending}
+            onClick={() => signUpWithGoogle()}
           >
             <FcGoogle className="mr-2 size-5" />
             Login with Google
@@ -135,6 +137,7 @@ const SignUpCard = () => {
             size={"lg"}
             className="w-full"
             disabled={isPending}
+            onClick={() => signUpWithGithub()}
           >
             <FaGithub className="mr-2 size-5" />
             Login with Github

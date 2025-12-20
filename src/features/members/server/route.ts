@@ -7,7 +7,7 @@ import { createAdminClient } from "@/lib/appwrite";
 import { sessionMiddleware } from "@/lib/session-middleware";
 import { zValidator } from "@hono/zod-validator";
 
-import { MemberRole } from "../types";
+import { Member, MemberRole } from "../types";
 import { getMember } from "../utils";
 
 const app = new Hono()
@@ -29,7 +29,7 @@ const app = new Hono()
 
       if (!member) return c.json({ error: "Unauthorized" }, 401);
 
-      const members = await databases.listDocuments(DATABASE_ID, MEMBERS_ID, [
+      const members = await databases.listDocuments<Member>(DATABASE_ID, MEMBERS_ID, [
         Query.equal("workspaceId", workspaceId),
       ]);
 
@@ -39,7 +39,7 @@ const app = new Hono()
 
           return {
             ...member,
-            name: user.name,
+            name: user.name || user.email.split("@")[0],
             email: user.email,
           };
         })
