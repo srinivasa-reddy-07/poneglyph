@@ -18,9 +18,9 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
       <div className="mx-auto max-w-screen-2xl p-4">
         <nav className="flex justify-between items-center">
           <Image
-            src={"/ipsum.svg"}
+            src={"/poneglyph.svg"}
             alt="Logo"
-            width={152}
+            width={242}
             height={56}
             className="object-contain cursor-pointer"
           />

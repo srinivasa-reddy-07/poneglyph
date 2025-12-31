@@ -1,0 +1,21 @@
+<svg
+  width="48"
+  height="48"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Background -->
+  <rect
+    width="48"
+    height="48"
+    rx="12"
+    fill="#A6E22E"
+  />
+
+  <!-- Star / Glyph -->
+  <path
+    d="M24 10L27.5 20.5L38 24L27.5 27.5L24 38L20.5 27.5L10 24L20.5 20.5L24 10Z"
+    fill="#03301D"
+  />
+</svg>
